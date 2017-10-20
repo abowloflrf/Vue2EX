@@ -1,16 +1,19 @@
 <template>
     <mu-card class="topic-card">
-        <mu-card-header>
-            <mu-avatar :src="topic.member.avatar_mini" slot="avatar"/>
-            <span>{{topic.member.username}}</span>
-        </mu-card-header>
-        <mu-card-text>
-            <h2>{{topic.title}}</h2>
+        <div class="topic-card-header">
+            <img :src="topic.member.avatar_normal"/>
+            <span class="topic-card-author">{{topic.member.username}}</span>
+        </div>
+        <mu-card-text class="topic-card-title">
+            <router-link :to="{ name: 'topic-detail', params: { id: topic.id }}">{{topic.title}}</router-link>
         </mu-card-text>
         <mu-divider/>
-        <mu-card-actions>
-            <mu-chip class="demo-chip">
+        <mu-card-actions class="topic-card-footer">
+            <mu-chip class="node-chip">
                 {{topic.node.title}}
+            </mu-chip>
+            <mu-chip class="reply-num-chip">
+                {{topic.replies}}
             </mu-chip>
         </mu-card-actions>
     </mu-card>
@@ -27,7 +30,32 @@ export default {
 </script>
 <style>
 .topic-card{
-    margin: 15px 40px;
+    margin: 0 40px 15px 40px;
+}
+.topic-card-header{
+    padding: 12px;
+}
+span.topic-card-author{
+    margin-bottom: 15px;
+}
+.topic-card-header img{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+.topic-card-title{
+    padding: 0 12px;
+}
+.topic-card-title a{
+    font-size: 24px;
+    color: #212121;
+}
+.topic-card-footer{
+    padding: 12px;
+}
+.topic-card .mu-chip{
+    line-height: 24px;
+    border-radius: 12px;
 }
 </style>
 

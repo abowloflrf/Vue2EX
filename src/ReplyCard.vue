@@ -1,15 +1,14 @@
 <template>
-  <mu-card class="relpy-card">
-        <mu-card-header>
-            <mu-avatar :src="reply.member.avatar_mini" slot="avatar"/>
-            <span>{{reply.member.username}}</span>
-        </mu-card-header>
-        <mu-card-text v-html="relpy.contend_rendered">
-        </mu-card-text>
-    </mu-card>
+    <mu-paper class="reply">
+      <img :src="reply.member.avatar_mini"/>
+      <span>{{reply.member.username}}</span>
+      <div v-html="reply.content_rendered"></div>
+      <span>感谢：{{reply.thanks}}</span>
+    </mu-paper>
 </template>
 <script>
 export default {
+
   props: {
     reply: {
       type: Object,
@@ -19,6 +18,9 @@ export default {
 }
 </script>
 <style scoped>
-
+  .reply{
+    padding: 10px 30px;
+    margin-bottom: 15px;
+  }
 </style>
 

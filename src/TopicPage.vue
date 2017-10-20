@@ -1,11 +1,13 @@
 <template>
-    <mu-content-block class="topic-main">
-        <h1>{{topic.title}}</h1>
-        <span>{{topic.member.username}}</span>
-        <mu-divider/>
-        <div class="topic-content" v-html="topic.content_rendered"></div>
-        <reply-list :topic-id="id"></reply-list>
-    </mu-content-block>
+    <div>
+        <mu-content-block class="topic-main" v-if="topic">
+            <h1 class="topic-title">{{topic.title}}</h1>
+            <span class="topic-author">{{topic.member.username}}</span>
+            <mu-divider/>
+            <div class="topic-content" v-html="topic.content_rendered"></div>
+        </mu-content-block>
+    <reply-list :topic-id="id" class="topic-replies"></reply-list>
+    </div>
 </template>
 <script>
 import ReplyList from './ReplyList.vue'
@@ -30,7 +32,25 @@ export default {
 </script>
 <style scoped>
 .topic-main{
-    margin: 10px 30px;
+    background: #fff;
+    border-radius: 4px;
+    margin: 15px auto;
+    max-width: 900px;
+}
+.topic-main hr{
+    margin:10px 0;
+}
+.topic-title{
+    margin: 10px 0;
+}
+.topic-author{
+    font-style: italic;
+    color: #666;
+    margin-bottom: 10px;
+}
+.topic-replies{
+    margin: 15px auto;
+    max-width: 900px;
 }
 </style>
 

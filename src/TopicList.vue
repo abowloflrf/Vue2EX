@@ -1,8 +1,7 @@
 <template>
     <div>
         <mu-sub-header>Header</mu-sub-header>
-        <TopicCard v-for="topic in topics" :topic="topic" :key="topics.indexOf(topic)">
-        </TopicCard>
+        <TopicCard v-for="topic in topics" :topic="topic" :key="topics.indexOf(topic)"></TopicCard>
     </div>
 </template>
 

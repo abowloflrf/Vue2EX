@@ -1,72 +1,51 @@
 <template><div class="layout">
     <div class="header">
       <div class="logo">
-        Muse-UI
+        <router-link :to="{name:'topics'}">Vue2EX</router-link>
       </div>
     </div>
     <div class="content">
-      <div class="body">
-            <router-view></router-view>
-      </div>
+          <router-view></router-view>
     </div>
     <div class="footer">
-      Muse-UI ©2017 Created by Muse-UI
+      Vue2EX ©2017 Created by ruofeng
     </div>
   </div>
     
 </template>
 
 <script>
-export default {
-
-};
+export default {};
 </script>
 
 <style scoped>
-.layout{
+.layout {
   background-color: rgb(236, 236, 236);
 }
 
-.header{
+.header {
   background-color: #7e57c2;
 }
 
-.logo{
+.logo a{
   font-size: 24px;
   color: white;
   display: inline-block;
   padding: 10px 20px;
 }
 
-.nav{
+.nav {
   display: inline-block;
   width: calc(100% - 150px);
   margin: 0 auto;
 }
 
-.tab{
-  margin: 0 auto;
-  width: 400px;
-  background-color: rgba(0, 0, 0, 0);
-}
 
-.content{
-  max-width: 1200px;
-  margin: 20px auto;
-}
-
-.breadcrumb{
-  margin: 10px 0;
-}
-
-.body{
-  background-color: white;
-  border-radius: 5px;
-  min-height: 500px;
-}
-
-.footer{
+.footer {
   padding: 20px 0;
   text-align: center;
+}
+.content{
+  padding: 0 15px;
 }
 </style>
