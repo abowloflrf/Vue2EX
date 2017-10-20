@@ -10,45 +10,47 @@
     </div>
 </template>
 <script>
-import ReplyList from './ReplyList.vue'
+import ReplyList from "./ReplyList.vue"
 import axios from "axios"
 export default {
-  data(){
-      return {
-          id:this.$route.params.id,
-          topic:null
-      }
-  },
-  created:function(){
-    var self=this
-    axios.get("/api/topics/show.json?id="+self.id).then(function(reseponse) {
-                self.topic = reseponse.data[0];
-    })
-  },
-  components:{
-      ReplyList
-  }
+    data() {
+        return {
+            id: this.$route.params.id,
+            topic: null
+        }
+    },
+    created: function() {
+        var self = this
+        axios
+            .get("/api/topics/show.json?id=" + self.id)
+            .then(function(reseponse) {
+                self.topic = reseponse.data[0]
+            })
+    },
+    components: {
+        ReplyList
+    }
 }
 </script>
 <style scoped>
-.topic-main{
+.topic-main {
     background: #fff;
     border-radius: 4px;
     margin: 15px auto;
     max-width: 900px;
 }
-.topic-main hr{
-    margin:10px 0;
-}
-.topic-title{
+.topic-main hr {
     margin: 10px 0;
 }
-.topic-author{
+.topic-title {
+    margin: 10px 0;
+}
+.topic-author {
     font-style: italic;
     color: #666;
     margin-bottom: 10px;
 }
-.topic-replies{
+.topic-replies {
     margin: 15px auto;
     max-width: 900px;
 }

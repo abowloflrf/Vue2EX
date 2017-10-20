@@ -15,37 +15,36 @@
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
 
 <style scoped>
 .layout {
-  background-color: rgb(236, 236, 236);
+    background-color: rgb(236, 236, 236);
 }
 
 .header {
-  background-color: #7e57c2;
+    background-color: #7e57c2;
 }
 
-.logo a{
-  font-size: 24px;
-  color: white;
-  display: inline-block;
-  padding: 10px 20px;
+.logo a {
+    font-size: 24px;
+    color: white;
+    display: inline-block;
+    padding: 10px 20px;
 }
 
 .nav {
-  display: inline-block;
-  width: calc(100% - 150px);
-  margin: 0 auto;
+    display: inline-block;
+    width: calc(100% - 150px);
+    margin: 0 auto;
 }
-
 
 .footer {
-  padding: 20px 0;
-  text-align: center;
+    padding: 20px 0;
+    text-align: center;
 }
-.content{
-  padding: 0 15px;
+.content {
+    padding: 0 15px;
 }
 </style>
