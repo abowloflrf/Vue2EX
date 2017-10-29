@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import TopicList from '../TopicList.vue'
 import TopicPage from '../TopicPage.vue'
+import MemberPage from '../MemberPage.vue'
 Vue.use(Router)
 export default new Router({
     routes:[
@@ -19,6 +20,11 @@ export default new Router({
             path:'/go/:tag',
             name:"tag",
             component:TopicList
+        },
+        {
+            path:'/member/:username',
+            name:"member",
+            component:MemberPage
         }
     ]
 })
