@@ -1,4 +1,5 @@
-<template><div class="layout">
+<template>
+<div class="layout">
     <div class="header">
       <div class="logo">
         <router-link :to="{name:'topics'}">Vue2EX</router-link>
@@ -7,15 +8,16 @@
     <div class="content">
           <router-view></router-view>
     </div>
-    <div class="footer">
-      Vue2EX ©2017 Created by ruofeng
-    </div>
-  </div>
-    
+    <site-footer></site-footer>
+</div>    
 </template>
-
 <script>
-export default {}
+import SiteFooter from "./SiteFooter.vue";
+export default {
+    components:{
+        SiteFooter
+    }
+}
 </script>
 
 <style>

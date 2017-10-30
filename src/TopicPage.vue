@@ -68,6 +68,9 @@ export default {
     margin: 15px auto;
     max-width: 900px;
 }
+.topic-content{
+    word-break:break-all;
+}
 .topic-content code{
     padding: 0 5px 2px;
     font-size: 0.8em;
