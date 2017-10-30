@@ -1,7 +1,7 @@
 <template>
     <mu-paper class="reply">
         <img :src="reply.member.avatar_mini"/>
-        <span>{{reply.member.username}}</span>
+        <span><router-link :to="{ name: 'member', params: { username: reply.member.username }}">{{reply.member.username}}</router-link></span>
         <div v-html="reply.content_rendered"></div>
         <span>感谢：{{reply.thanks}}</span>
     </mu-paper>

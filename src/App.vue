@@ -30,12 +30,13 @@ html,body{
 }
 
 .header {
-    background-color: #7e57c2;
+    background:#fff;
+    box-shadow:0 0.125rem 0.3125rem rgba(0,0,0,.26);
 }
 
 .logo a {
     font-size: 24px;
-    color: white;
+    color: #212121;
     display: inline-block;
     padding: 10px 20px;
 }
@@ -55,6 +56,6 @@ html,body{
 .content {
     padding: 0 15px;
     max-width: 900px;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 </style>

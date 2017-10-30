@@ -1,6 +1,9 @@
 <template>
     <div>
-        <mu-sub-header>Header</mu-sub-header>
+        <div class="breadcrumb">
+            <span>V2EX / </span>
+            <span>最新主题</span>
+        </div>
         <TopicCard v-for="topic in topics" :topic="topic" :key="topics.indexOf(topic)"></TopicCard>
     </div>
 </template>
@@ -28,5 +31,10 @@ export default {
 </script>
 
 <style>
-
+.breadcrumb{
+    margin: 10px 40px;
+}
+.breadcrumb span{
+    font-size:18px;
+}
 </style>

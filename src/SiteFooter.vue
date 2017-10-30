@@ -1,5 +1,5 @@
 <template>
-    <div class="footer" v-if="siteStats">
+    <div class="footer" v-if="siteStats!=null&&siteInfo!=null">
         <div>
             <span>Vue2EX ©2017 Created by ruofeng / </span>
             <span>话题总数：{{siteStats.topic_max}} / </span>

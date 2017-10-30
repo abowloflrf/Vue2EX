@@ -1,13 +1,16 @@
 <template>
-    <div>
-        <mu-content-block class="topic-main" v-if="topic">
+    <div v-if="topic">
+        <mu-content-block class="topic-main">
             <h1 class="topic-title">{{topic.title}}</h1>
-            <span class="topic-author">{{topic.member.username}}</span>
+            <span class="topic-author"><router-link :to="{ name: 'member', params: { username: topic.member.username }}">{{topic.member.username}}</router-link></span>
             <span class="created-at">{{createdAt}}</span>
             <mu-divider/>
             <div class="topic-content" v-html="topic.content_rendered"></div>
         </mu-content-block>
-    <reply-list :topic-id="id" class="topic-replies"></reply-list>
+    <reply-list v-if="topic.replies>0" :topic-id="id" class="topic-replies"></reply-list>
+    <div class="no-reply" v-else>
+        <span style="color: rgba(0, 0, 0, 0.25);">目前尚无回复</span>
+    </div>
     </div>
 </template>
 <script>
@@ -39,7 +42,7 @@ export default {
     }
 }
 </script>
-<style scoped>
+<style>
 .topic-main {
     background: #fff;
     border-radius: 4px;
@@ -71,28 +74,27 @@ export default {
 .topic-content{
     word-break:break-all;
 }
-.topic-content code{
-    padding: 0 5px 2px;
-    font-size: 0.8em;
-    line-height: 1em;
-    font-weight: 400!important;
-    border-radius: 3px;
+.topic-content img{
+    max-width:100%;
 }
-.topic-content pre {
-    max-width: 100%;
-    overflow-x: auto;
-    margin: 1.5em 0 3em;
-    padding: 20px;
-    font-size: 1.3rem;
-    line-height: 1.4em;
-    background: #292c35;
-    border-radius: 5px;
+.topic-content pre{
+    display: block;
+    padding: 1em;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background:#f6f8fa;
+    border-radius:4px;
+    border:1px solid #eaecef;
 }
-.topic-content pre code {
-    padding: 0;
-    font-size: inherit;
-    line-height: inherit;
-    background: transparent;
+.no-reply{
+    border:2px dashed rgba(0, 0, 0, 0.1);
+    border-radius:3px;
+    padding:10px 20px;
+    text-align:center;
+}
+.no-reply span{
+    font-size:18px;
+    line-height:150%;
 }
 </style>
 

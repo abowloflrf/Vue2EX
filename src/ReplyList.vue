@@ -1,9 +1,6 @@
 <template>
     <div>
-        <reply-card v-if="replies.length!=0" v-for="reply in replies" :reply="reply" :key="replies.indexOf(reply)"></reply-card>
-        <h1 v-else>
-            没有人回复
-        </h1>
+        <reply-card v-for="reply in replies" :reply="reply" :key="replies.indexOf(reply)"></reply-card>
     </div>
 </template>
 <script>
