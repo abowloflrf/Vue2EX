@@ -18,7 +18,11 @@
 export default {}
 </script>
 
-<style scoped>
+<style>
+html,body{
+    height: 100%;
+    width: 100%;
+}
 .layout {
     background-color: rgb(236, 236, 236);
 }
@@ -43,8 +47,12 @@ export default {}
 .footer {
     padding: 20px 0;
     text-align: center;
+    background: #fff;
+    border-top: 1px solid #c7c7c7;
 }
 .content {
     padding: 0 15px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 </style>

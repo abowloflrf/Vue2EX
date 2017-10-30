@@ -3,6 +3,7 @@
         <mu-content-block class="topic-main" v-if="topic">
             <h1 class="topic-title">{{topic.title}}</h1>
             <span class="topic-author">{{topic.member.username}}</span>
+            <span class="created-at">{{createdAt}}</span>
             <mu-divider/>
             <div class="topic-content" v-html="topic.content_rendered"></div>
         </mu-content-block>
@@ -27,6 +28,12 @@ export default {
                 self.topic = reseponse.data[0]
             })
     },
+    computed:{
+        createdAt:function(){
+            var date=new Date(this.topic.created*1000)
+            return date.toLocaleString()
+        }
+    },
     components: {
         ReplyList
     }
@@ -42,8 +49,15 @@ export default {
 .topic-main hr {
     margin: 10px 0;
 }
+.topic-main .created-at{
+    margin-left: 20px;
+    color:#666;
+    font-style:italic;
+}
 .topic-title {
     margin: 10px 0;
+    font-size: 22px;
+    font-weight: 400;
 }
 .topic-author {
     font-style: italic;
@@ -53,6 +67,29 @@ export default {
 .topic-replies {
     margin: 15px auto;
     max-width: 900px;
+}
+.topic-content code{
+    padding: 0 5px 2px;
+    font-size: 0.8em;
+    line-height: 1em;
+    font-weight: 400!important;
+    border-radius: 3px;
+}
+.topic-content pre {
+    max-width: 100%;
+    overflow-x: auto;
+    margin: 1.5em 0 3em;
+    padding: 20px;
+    font-size: 1.3rem;
+    line-height: 1.4em;
+    background: #292c35;
+    border-radius: 5px;
+}
+.topic-content pre code {
+    padding: 0;
+    font-size: inherit;
+    line-height: inherit;
+    background: transparent;
 }
 </style>
 

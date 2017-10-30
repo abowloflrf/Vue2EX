@@ -15,45 +15,58 @@
             <mu-chip class="reply-num-chip">
                 {{topic.replies}}
             </mu-chip>
+            <span class="created-at">{{createdAt}}</span>
         </mu-card-actions>
     </mu-card>
 </template>
 <script>
 export default {
-  props: {
-    topic: {
-      type: Object,
-      required: true
+    props: {
+        topic: {
+            type: Object,
+            required: true
+        }
+    },
+    computed:{
+        createdAt:function(){
+            var date=new Date(this.topic.created*1000)
+            return date.toLocaleString()
+        }
     }
-  }
-};
+}
 </script>
 <style>
-.topic-card{
+.topic-card {
     margin: 0 40px 15px 40px;
 }
-.topic-card-header{
+.topic-card-header {
     padding: 12px;
 }
-span.topic-card-author{
+span.topic-card-author {
     margin-bottom: 15px;
 }
-.topic-card-header img{
+.topic-card-header img {
     height: 30px;
     width: 30px;
     border-radius: 50%;
 }
-.topic-card-title{
+.topic-card-title {
     padding: 0 12px;
 }
-.topic-card-title a{
-    font-size: 24px;
+.topic-card-title a {
+    font-size: 20px;
     color: #212121;
 }
-.topic-card-footer{
+.topic-card-footer {
     padding: 12px;
 }
-.topic-card .mu-chip{
+.topic-card-footer .created-at{
+    font-style: italic;
+    color: #444;
+    font-size: 12px;
+    margin-left: 10px;
+}
+.topic-card .mu-chip {
     line-height: 24px;
     border-radius: 12px;
 }
