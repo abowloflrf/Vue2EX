@@ -1,6 +1,10 @@
 # Vue2EX
 
 > A Vue.js project
+## Preview
+![](preview-1.png)
+
+![](preview-2.png)
 
 ## Build Setup
 
