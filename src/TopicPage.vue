@@ -84,7 +84,6 @@ export default {
     overflow-x: hidden;
     background:#f6f8fa;
     border-radius:4px;
-    border:1px solid #eaecef;
 }
 .no-reply{
     border:2px dashed rgba(0, 0, 0, 0.1);

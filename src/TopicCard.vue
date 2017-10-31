@@ -2,7 +2,8 @@
     <mu-card class="topic-card">
         <div class="topic-card-header">
             <div class="header-avatar">
-                <img :src="topic.member.avatar_normal"/>
+                <router-link :to="{ name: 'member', params: { username: topic.member.username }}"><img :src="topic.member.avatar_normal"/></router-link>
+                
             </div>
             <div class="header-title">
                 <router-link :to="{ name: 'topic-detail', params: { id: topic.id }}">{{topic.title}}</router-link>
